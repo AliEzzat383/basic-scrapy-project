@@ -17,7 +17,17 @@ NEWSPIDER_MODULE = 'basic_scrapy_spider.spiders'
 #USER_AGENT = 'quotes_js_scraper (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+
+
+SCRAPEOPS_API_KEY = '3e19af6c-471f-4406-abaa-43971fb6fe6e'
+
+SCRAPEOPS_PROXY_ENABLED = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
+}
+
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
